@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import { TodoContext } from '../context/TodoContext';
 
 // This component is for input and add the task to the list
@@ -11,7 +12,7 @@ const AddTodo = () => {
     // creating arrow function for saving the value to the main provider
     const addTodo = (e) => {
         // preventing from auto submission
-        e.preventDefalut();
+        e.preventDefault();
 
         // check the title is blank or not 
         if('' === title || undefined === title) {
@@ -20,7 +21,7 @@ const AddTodo = () => {
         }
 
         // spreading the pervious array and add the new title
-        const newTodos = [...todos, {id: 1, title: title, completed: false}];
+        const newTodos = [...todos, {id: uuidv4(), title: title, completed: false}];
         setTodos(newTodos);
         setTitle('')
 
