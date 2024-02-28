@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { TodoContext } from '../context/TodoContext';
 
@@ -26,6 +26,11 @@ const AddTodo = () => {
         setTitle('')
 
     }
+
+    // Store the data on local storage using useEffect hooks
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos))
+    }, [todos])
 
   return (
     <>

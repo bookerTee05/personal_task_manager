@@ -20,15 +20,29 @@ const Todo = (props) => {
         })
 
         setTodos(filterTodos);
-
     }
+
+    // delete function
+    const deleteTodo = (e) => {
+        // prevent auto submision
+        e.preventDefault();
+
+        const filterTodo = todos.filter((item) => {
+            return item.id !== e.target.id;
+        })
+
+        setTodos(filterTodo);
+    }
+
+
+    const isCompleted = props.completed ? 'checked':'';
 
     return (
         <>
             <p className='todo-item'>
-                <input type='checkbox' id={props.id} value={props.id} onChange={e => completeTodo(e)} />
+                <input type='checkbox' checked={isCompleted} id={props.id} value={props.id} onChange={e => completeTodo(e)} />
                 <label htmlFor={props.id}>{props.title}</label>
-                <button type="button">Delete</button>
+                <button type="button" id={props.id} onClick={e => deleteTodo(e)} className='btn-delete'>Delete</button>
             </p>
         </>
     )
