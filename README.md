@@ -14,5 +14,11 @@
   - **Step 4**
     > npm run start
 
+- **Features:**
+
+  - **Task Management:** It functionality to add new tasks, delete tasks, and mark tasks as completed or incomplete.
+  - **Storage:** Using local storage to save tasks, ensuring they are available even after the browser is closed and reopened.
+  - **Error Handling:** It has basic error handling and input validation to prevent the addition of empty tasks.
+
 - **Screen Short:**
   ![myimage-alt-tag](src/assets/image1.png)
