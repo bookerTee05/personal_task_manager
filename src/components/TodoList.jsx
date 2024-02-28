@@ -6,7 +6,7 @@ import { TodoContext } from '../context/TodoContext'
 
 const TodoList = () => {
 
-    const [todos, setTodos] = useContext(TodoContext)
+    const [todos] = useContext(TodoContext)
 
     return (
         1 <= todos.length ? todos.map((item) => {
